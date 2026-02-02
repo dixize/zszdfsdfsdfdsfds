@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEZDRY — Интерактив</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__inner">
+            <div class="logo">
+                <span class="logo-main">DEZDRY</span>
+                <span class="logo-sub">ДЕЗИНФЕКЦИЯ</span>
+            </div>
+            <nav class="nav">
+                <a href="#prices">Цены</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <button class="btn btn--call" onclick="openModal()">Заказать звонок</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero__grid">
+            <div class="hero__text">
+                <h1>Уничтожение вредителей <br><span>с гарантией 1000%</span></h1>
+                <p>Избавим от тараканов, клопов и грызунов за 1 выезд.</p>
+                <div class="hero__group">
+                    <button class="btn btn--main pulse" onclick="scrollToQuiz()">Рассчитать стоимость</button>
+                    <div class="hero__phone">+7 (939) 112-43-0</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+        <div class="container">
+            <div class="quiz-card">
+                <div class="quiz-header">
+                    <h3>Пройдите опрос и получите план действий + скидку 10%</h3>
+                    <div class="progress-bar"><div class="progress" id="progress"></div></div>
+                </div>
+                
+                <div class="quiz-step active" id="step1">
+                    <p class="step-title">Где нужно провести обработку?</p>
+                    <div class="quiz-options">
+                        <label class="option"><input type="radio" name="place" value="Квартира"> <span>Квартира</span></label>
+                        <label class="option"><input type="radio" name="place" value="Дом"> <span>Частный дом</span></label>
+                        <label class="option"><input type="radio" name="place" value="Офис"> <span>Офис / Магазин</span></label>
+                    </div>
+                    <button class="btn btn--next" onclick="nextStep(2)">Следующий вопрос →</button>
+                </div>
+
+                <div class="quiz-step" id="step2">
+                    <p class="step-title">Кто вас беспокоит?</p>
+                    <div class="quiz-options">
+                        <label class="option"><input type="checkbox"> <span>Тараканы</span></label>
+                        <label class="option"><input type="checkbox"> <span>Клопы</span></label>
+                        <label class="option"><input type="checkbox"> <span>Грызуны</span></label>
+                    </div>
+                    <button class="btn btn--next" onclick="nextStep(3)">Получить расчет</button>
+                </div>
+
+                <div class="quiz-step" id="step3">
+                    <p class="step-title">Готово! Оставьте телефон, пришлем расчет со скидкой</p>
+                    <input type="text" placeholder="Ваше имя" class="quiz-input">
+                    <input type="tel" placeholder="+7 (___) ___-__-__" class="quiz-input">
+                    <button class="btn btn--main">Забрать подарок 🎁</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Оставьте заявку</h2>
+            <p>Мы перезвоним вам через 5 минут</p>
+            <input type="tel" placeholder="Ваш телефон">
+            <button class="btn btn--main">Отправить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
