@@ -1,0 +1,51 @@
+:root {
+    --orange: #ff5722;
+    --dark: #2c3e50;
+    --light: #f4f7f6;
+}
+
+body { font-family: sans-serif; margin: 0; background: var(--light); scroll-behavior: smooth; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Кнопки с эффектами */
+.btn { 
+    padding: 15px 30px; border-radius: 50px; border: none; cursor: pointer; 
+    font-weight: bold; transition: all 0.3s ease; 
+}
+
+.btn--main { background: var(--orange); color: white; box-shadow: 0 4px 15px rgba(255,87,34,0.3); }
+.btn--main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255,87,34,0.5); }
+.btn--main:active { transform: scale(0.95); }
+
+/* Анимация пульсации для привлечения внимания */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.pulse { animation: pulse 2s infinite; }
+
+/* Квиз */
+.quiz-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin-top: -50px; }
+.quiz-step { display: none; }
+.quiz-step.active { display: block; animation: fadeIn 0.5s; }
+
+.quiz-options { display: grid; gap: 10px; margin: 20px 0; }
+.option { 
+    padding: 15px; border: 2px solid #eee; border-radius: 10px; cursor: pointer; transition: 0.2s;
+}
+.option:hover { border-color: var(--orange); background: #fff5f2; }
+
+.progress-bar { background: #eee; height: 10px; border-radius: 5px; margin-bottom: 30px; }
+.progress { background: var(--orange); height: 100%; width: 33%; transition: 0.5s; }
+
+/* Модалка */
+.modal-overlay { 
+    position: fixed; top:0; left:0; width:100%; height:100%; 
+    background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 1000;
+}
+.modal { background: white; padding: 40px; border-radius: 15px; position: relative; width: 300px; }
+.close { position: absolute; top: 10px; right: 20px; cursor: pointer; font-size: 24px; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
